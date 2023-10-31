@@ -22,9 +22,11 @@ st.write("Below you can find some of the apps i have built in python."
 
 col3, col4 = st.columns(2)
 df = pandas.read_csv("data_pf.csv",sep=";")
+left_column = [i for i in range(0, 21, 2)]
+right_column = [i for i in range(1,21,2)]
 with col3:
     for index, row in df.iterrows():
-        if index/2 == 0:
+        if index in left_column:
             st.header(row['title'])
             st.write(row['description'])
             st.info(f"Website: {row['url']}")
@@ -32,7 +34,7 @@ with col3:
 
 with col4:
     for index, row in df.iterrows():
-        if index/2 != 0:
+        if index in right_column:
             st.header(row['title'])
             st.write(row['description'])
             st.info(f"Website: {row['url']}")
