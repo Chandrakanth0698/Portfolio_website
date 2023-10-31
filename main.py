@@ -1,5 +1,5 @@
 import streamlit as st
-
+import pandas
 
 st.set_page_config(layout="wide")
 
@@ -19,3 +19,22 @@ with col2:
     st.info(content )
 st.write("Below you can find some of the apps i have built in python."
          " Feel free to contact me!")
+
+col3, col4 = st.columns(2)
+df = pandas.read_csv("data_pf.csv",sep=";")
+with col3:
+    for index, row in df.iterrows():
+        if index/2 == 0:
+            st.header(row['title'])
+            st.write(row['description'])
+            st.info(f"Website: {row['url']}")
+            st.image(f"images/{index+1}.png")
+
+with col4:
+    for index, row in df.iterrows():
+        if index/2 != 0:
+            st.header(row['title'])
+            st.write(row['description'])
+            st.info(f"Website: {row['url']}")
+            image_path = f"images/{index+1}.png"
+            st.image(image_path)
