@@ -30,7 +30,8 @@ with col3:
             st.header(row['title'])
             st.write(row['description'])
             st.info(f"Website: {row['url']}")
-            st.image(f"images/{index+1}.png")
+            st.image(f"images/{row['image']}")
+            st.write(f"[Source code]({row['src']})")
 
 with col4:
     for index, row in df.iterrows():
@@ -38,5 +39,5 @@ with col4:
             st.header(row['title'])
             st.write(row['description'])
             st.info(f"Website: {row['url']}")
-            image_path = f"images/{index+1}.png"
-            st.image(image_path)
+            st.image(f"images/{row['image']}")
+            st.write(f"[Source code]({row['src']})")
