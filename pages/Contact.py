@@ -16,6 +16,5 @@ message:{raw_message}
     if sub_button:
         send_email(message,password=st.secrets["SMTP_GMAIL_PASSWORD"])
         st.info("Email sent successfully")
-        st.session_state['input_user_email'] = ""
-        st.session_state['input_message'] = ""
+
 
