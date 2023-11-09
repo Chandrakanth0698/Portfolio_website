@@ -5,7 +5,7 @@ import os
 import streamlit
 
 
-def send_email(message,password):
+def send_email(message, password):
     host = "smtp.gmail.com"
     port = 465
     username = "de.chandra226@gmail.com"
