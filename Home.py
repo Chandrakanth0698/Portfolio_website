@@ -21,9 +21,9 @@ st.write("Below you can find some of the apps i have built in python."
          " Feel free to contact me!")
 
 col3, col4 = st.columns(2)
-df = pandas.read_csv("data_pf.csv",sep=";")
+df = pandas.read_csv("data_pf.csv", sep=";")
 left_column = [i for i in range(0, 21, 2)]
-right_column = [i for i in range(1,21,2)]
+right_column = [i for i in range(1, 21, 2)]
 with col3:
     for index, row in df.iterrows():
         if index in left_column:
